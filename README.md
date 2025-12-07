@@ -25,108 +25,64 @@ This architecture follows modern data engineering best practices, ensuring maint
 
 The pipeline uses three logical schemas:
 
-- **`bronze` schema** – Raw or minimally processed data.
-- **`silver` schema** – Clean, standardized, relational data.
-- **`gold` schema** – Business-ready analytical datasets.
+- **`bronze schema`** – Raw or minimally processed data.
+- **`silver schema`** – Clean, standardized, relational data.
+- **`gold schema`** – Business-ready analytical datasets.
 
-📂 Schema & Table Design
-🥉 Bronze Schema – bronze
+## **📂 Schema & Table Design**
+## 🥉 Bronze Schema (bronze)
 
-Purpose: Raw landing zone
-Characteristics:
+Raw ingestion layer; preserves original structure.
 
-Minimal transformations
+Examples:
 
-Source structure preserved
+- **`bronze.customers_raw`**
 
-Includes timestamps for lineage
+- **`bronze.orders_ra`**
 
-Example tables:
+- **`bronze.products_raw`**
 
-bronze.customers_raw
+- **`bronze.payments_raw`**
 
-bronze.orders_raw
+- **`bronze.stores_raw`**
 
-bronze.products_raw
+- **`bronze.shipments_raw`**
 
-bronze.stores_raw
 
-bronze.payments_raw
+## Characteristics:
 
-bronze.shipments_raw
+- Minimal transformations
 
-🥈 Silver Schema – silver
+- Load timestamps
 
-Purpose: Cleaned and standardized data
-Characteristics:
+- Source-of-truth for auditing
 
-Data quality checks
+## **🥈 Silver Schema (silver)**
 
-Normalized formats
+Cleaned, standardized, relational-modeled layer.
+
+## Examples:
+
+- **`silver.customers`**
+
+- **`silver.orders`** 
+
+- **`silver.products`**
+
+- **`silver.payments`**
+
+- **`silver.stores`**
+
+- **`silver.shipments`**
+
+## **Characteristics:**
 
 Deduplication
 
-Referential integrity corrections
+Fix NULLs & data types
 
-Example tables:
+Referential integrity
 
-silver.customers
+Uniform date/time formats
 
-silver.orders
 
-silver.products
-
-silver.payments
-
-silver.stores
-
-silver.shipments
-
-🥇 Gold Schema – gold
-
-Purpose: Analytics & BI-ready models
-Characteristics:
-
-Fact & dimension tables
-
-Aggregated or denormalized
-
-Optimized for reporting
-
-Example tables:
-
-gold.fact_sales
-
-gold.fact_revenue_daily
-
-gold.dim_customer
-
-gold.dim_product
-
-gold.dim_store
-
-⚙️ ETL Logic: Stored Procedures & CTEs
-
-The transformation logic is implemented using:
-
-Stored Procedures
-
-sp_load_bronze (optional, if you stage raw loads via procedure)
-
-sp_transform_bronze_to_silver
-
-sp_transform_silver_to_gold
-
-sp_run_full_etl (optional master procedure)
-
-CTEs
-
-Used for:
-
-Cleaning and standardizing data
-
-Joining tables
-
-Step-by-step business rules
-
-Example CTE-based transformation:
