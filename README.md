@@ -168,18 +168,74 @@ GO
 - CREATE SCHEMA silver;
 - CREATE SCHEMA gold;
 
+## 2️⃣ Load Data → Bronze Layer
+####
+Raw CSV/JSON/external tables loaded directly into `bronze.*_raw`.
+
+## 3️⃣ Transform → Silver Layer
+####
+EXEC silver.sp_transform_bronze_to_silver;
+
+## 📊 Example Query (Gold Layer)
+####
+SELECT
+    ds.store_name,
+    dp.product_name,
+    fs.sales_date,
+    fs.quantity,
+    fs.total_sales
+FROM gold.fact_sales fs
+JOIN gold.dim_store ds ON fs.store_key = ds.store_key
+JOIN gold.dim_product dp ON fs.product_key = dp.product_key;
 
 
+## **🧰 Technology Stack**
 
+- SQL Server / PostgreSQL / Azure SQL / Snowflake
 
+- Stored Procedures
 
+- CTE-based transformations
 
+- Dimensional modeling (Star Schema)
 
+## ⚡ Performance & Scalability
 
+- Efficient transformations for 60,000+ records
 
+- Indexed keys for optimized joins
 
+- Layered architecture ensures reusability and low maintenance
 
+- Modular Stored Procedures for incremental loads
 
+## 🤝 Contributing
+
+Contributions are welcome!
+
+- **1.** Fork this repo
+
+- 2.Create a feature branch
+
+Commit your changes
+
+Submit a Pull Request
+
+📄 License
+
+This project is licensed under the MIT License.
+
+✨ Final Notes
+
+This ETL pipeline is built to demonstrate clean SQL engineering practices, and showcases:
+
+Multi-layer ETL architecture
+
+Readable & maintainable SQL transformations
+
+Professional project structure
+
+Feel free to customize table names, diagrams, scripts, and folder structure to match your dataset or use case.
 
 
 
