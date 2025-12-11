@@ -87,7 +87,7 @@ Cleaned, standardized, relational-modeled layer.
 
 ## **🥇 Gold Schema (gold)**
 
-Analytics-ready tables for BI and reporting.
+Analytics-ready tables for BI and reporting for furthur analysis and .
 
 # Examples:
 
@@ -99,7 +99,7 @@ Analytics-ready tables for BI and reporting.
 
 - **`gold.dim_product`**
 
-- **`gold.dim_store**
+- **`gold.dim_store`**
 
 ## Characteristics:
 
@@ -119,7 +119,7 @@ This project uses Stored Procedures to orchestrate ETL and CTEs to prepare consi
 CREATE OR ALTER PROCEDURE silver.sp_transform_orders
 AS
 BEGIN
-    SET NOCOUNT ON;
+    SET NOCOUNT ON
 
     WITH cleaned_orders AS (
         SELECT
@@ -170,7 +170,7 @@ GO
 
 ## 2️⃣ Load Data → Bronze Layer
 ####
-Raw CSV/JSON/external tables loaded directly into `bronze.*_raw`.
+Raw CSV/external tables loaded directly into `bronze.*_raw`.
 
 ## 3️⃣ Transform → Silver Layer
 ####
