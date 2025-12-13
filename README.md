@@ -1,4 +1,4 @@
-# Building_Data_Warehouse_ETL_Pipeline
+# Build_A_Data_Warehouse_ETL_Pipeline
 
 This repository contains a **SQL-based ETL pipeline** that processes raw data into **clean, optimized, and analytics-ready datasets** using a **multi-layered (Bronze / Silver / Gold) architecture**.
 
