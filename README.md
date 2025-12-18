@@ -38,7 +38,7 @@ Examples:
 
 - **`bronze.customers_raw`**
 
-- **`bronze.orders_ra`**
+- **`bronze.orders_raw`**
 
 - **`bronze.products_raw`**
 
