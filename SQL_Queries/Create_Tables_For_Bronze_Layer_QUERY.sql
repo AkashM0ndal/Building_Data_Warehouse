@@ -1,3 +1,23 @@
+/*
+====================================================================
+CREATE 'bronze' layer tables 
+====================================================================
+Script Purpose: 
+			- Firstly drop the specified table and after that create a new table as the same name.
+			- Create a store procedure to run the whole query more efficiently.
+
+WARNINGS !! :
+		- Run this query at first(before run the 'silver' & 'gold' layer queries.
+
+
+
+*/
+
+
+
+
+
+
 --create a store procedure to create tables in Bronze layer
 CREATE OR ALTER PROCEDURE create_bronze AS
 BEGIN
@@ -136,6 +156,7 @@ PRINT 'Successfully Create 06 Table out of 06 Tables..';
 PRINT '================================================';
 
 END
+
 
 
 
