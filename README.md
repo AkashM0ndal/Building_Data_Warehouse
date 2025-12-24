@@ -36,20 +36,21 @@ Raw ingestion layer; preserves original structure.
 
 Examples:
 
-- **`bronze.customers_raw`**
+- **`bronze.crm_cust_info`**
 
-- **`bronze.orders_raw`**
+- **`bronze.crm_prd_info`**
 
-- **`bronze.products_raw`**
+- **`bronze.crm_sales_details`**
 
-- **`bronze.payments_raw`**
+- **`bronze.erp_cust_az12`**
 
-- **`bronze.stores_raw`**
+- **`bronze.erp_loc_a101`**
 
-- **`bronze.shipments_raw`**
+- **`bronze.erp_px_cat_g1v2`**
 
 
 ## Characteristics:
+- Load all data into table format
 
 - Minimal transformations
 
@@ -59,21 +60,21 @@ Examples:
 
 ## **🥈 Silver Schema (silver)**
 
-Cleaned, standardized, relational-modeled layer.
+Cleaned, standardized, Optimizing, relational-modeled layer.
 
 ## Examples:
 
-- **`silver.customers`**
+- **`silver.crm_cust_info_s`**
 
-- **`silver.orders`** 
+- **`silver.crm_prd_info`** 
 
-- **`silver.products`**
+- **`silver.crm_sales_info`**
 
-- **`silver.payments`**
+- **`silver.erp_cust_az12`**
 
-- **`silver.stores`**
+- **`silver.erp_loc_a101`**
 
-- **`silver.shipments`**
+- **`silver.erp_px_cat_g1v1`**
 
 ## **Characteristics:**
 
