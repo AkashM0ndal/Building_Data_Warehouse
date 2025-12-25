@@ -33,7 +33,6 @@ The pipeline uses three logical schemas:
 ## 🥉 Bronze Schema (bronze)
 
 Raw ingestion layer; preserves original structure.
-
 Examples:
 
 - **`bronze.crm_cust_info`**
